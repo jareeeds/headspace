@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #0e0d0c;
+  --color-surface: #171614;
+  --color-raised: #1f1e1b;
+  --color-fg: #f2eee6;
+  --color-muted: #9c968c;
+  --color-subtle: #6f6a63;
+  --color-accent: #c5c0b6;
+  --color-accent-fg: #0e0d0c;
+  --color-line: #2c2a27;
+  --color-puck: #4a3428;
+  --color-puck-top: #6b4d3c;
+  --color-steel: #8a8884;
+  --color-danger: #c46a52;
+  --color-calm: #7d9a84;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+
+  --shadow-border: 0 0 0 1px rgba(242, 238, 230, 0.08);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    scrollbar-color: var(--color-line) var(--color-bg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.stagger-in > * {
+  animation: rise-in 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stagger-in > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.stagger-in > *:nth-child(2) {
+  animation-delay: 40ms;
+}
+.stagger-in > *:nth-child(3) {
+  animation-delay: 80ms;
+}
+.stagger-in > *:nth-child(4) {
+  animation-delay: 120ms;
+}
+.stagger-in > *:nth-child(5) {
+  animation-delay: 160ms;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-in > * {
+    animation: none;
+  }
+}

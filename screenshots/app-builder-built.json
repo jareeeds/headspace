@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Headspace",
+      "hasCanvas": false,
+      "bodyTextLen": 2434,
+      "bodyTextHash": "19a4f7aca2199e68925c82a37bc0826a5507f8093999673ef14f11cac0056548",
+      "bodyTextPrefix": "ESPRESSO GEOMETRY Headspace Finer coffee packs denser. To hold t",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Headspace",
+      "hasCanvas": false,
+      "bodyTextLen": 2391,
+      "bodyTextHash": "2707fe25fbc37dd583906b448a82da4c28b3bd9990233435a521aafe76ee649a",
+      "bodyTextPrefix": "ESPRESSO GEOMETRY Headspace Finer coffee packs denser. To hold t",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
