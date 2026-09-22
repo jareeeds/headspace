@@ -148,8 +148,8 @@ function authPopupPlugin(): Plugin {
 const pages = process.env.PAGES === "1";
 
 export default defineConfig(({ command, isPreview }) => ({
-  // GitHub project pages are served at /twosips/, not the domain root.
-  base: pages ? "/twosips/" : "/",
+  // GitHub project pages are served at /headspace/, not the domain root.
+  base: pages ? "/headspace/" : "/",
   server: {
     host: "0.0.0.0",
     port: 8080,

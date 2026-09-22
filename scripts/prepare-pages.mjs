@@ -4,8 +4,8 @@ const out = "pages";
 rmSync(out, { recursive: true, force: true });
 cpSync(".vercel/output/static", out, { recursive: true });
 const html = readFileSync(`${out}/index.html`, "utf8")
-  .replaceAll('href="/__grok/', 'href="/twosips/__grok/')
-  .replaceAll('href="/favicon.svg"', 'href="/twosips/favicon.svg"');
+  .replaceAll('href="/__grok/', 'href="/headspace/__grok/')
+  .replaceAll('href="/favicon.svg"', 'href="/headspace/favicon.svg"');
 writeFileSync(`${out}/index.html`, html);
 writeFileSync(`${out}/404.html`, html);
 mkdirSync(`${out}/__grok`, { recursive: true });
@@ -15,15 +15,15 @@ writeFileSync(
     {
       name: "Headspace",
       short_name: "Headspace",
-      id: "/twosips/",
-      start_url: "/twosips/",
-      scope: "/twosips/",
+      id: "/headspace/",
+      start_url: "/headspace/",
+      scope: "/headspace/",
       display: "standalone",
       background_color: "#0e0d0c",
       theme_color: "#0e0d0c",
       icons: [
         {
-          src: "/twosips/__grok/icon-180.png",
+          src: "/headspace/__grok/icon-180.png",
           sizes: "180x180",
           type: "image/png",
         },
