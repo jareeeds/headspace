@@ -145,7 +145,11 @@ function authPopupPlugin(): Plugin {
 // `0.0.0.0:8080` is the live-preview contract — don't change host/port.
 // The dev server starts once `src/router.tsx` and `src/routes/` exist — see
 // AGENTS.md § "First scaffold".
+const pages = process.env.PAGES === "1";
+
 export default defineConfig(({ command, isPreview }) => ({
+  // GitHub project pages are served at /twosips/, not the domain root.
+  base: pages ? "/twosips/" : "/",
   server: {
     host: "0.0.0.0",
     port: 8080,
@@ -168,7 +172,16 @@ export default defineConfig(({ command, isPreview }) => ({
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
     grokPwaPlugin(),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart(
+      pages
+        ? {
+            spa: {
+              enabled: true,
+              prerender: { outputPath: "/index", crawlLinks: false },
+            },
+          }
+        : undefined,
+    ),
     ...(command === "build" || isPreview
       ? [
           nitro({
